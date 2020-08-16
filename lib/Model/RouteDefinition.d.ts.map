@@ -1,0 +1,1 @@
+{"version":3,"file":"RouteDefinition.d.ts","sourceRoot":"","sources":["../../src/Model/RouteDefinition.ts"],"names":[],"mappings":"AAAA,oBAAY,UAAU;IACpB,GAAG,QAAQ;IACX,IAAI,SAAS;IACb,MAAM,WAAW;IACjB,OAAO,YAAY;IACnB,GAAG,QAAQ;IACX,KAAK,UAAU;CAChB;AAED,MAAM,WAAW,eAAe;IAC9B,IAAI,EAAE,MAAM,CAAC;IACb,aAAa,EAAE,UAAU,CAAC;IAC1B,UAAU,EAAE,MAAM,GAAG,MAAM,CAAC;CAC7B"}
