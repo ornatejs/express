@@ -86,6 +86,10 @@ import TestService from '../service/TestService';
 import { addSomeValue, logBody } from '../middleware/TestMiddleware';
 
 @Controller('/methods')
+@ClassMiddleware((req: Request, res: Response, next: NextFunction) => {
+  req.dbConnectionString = 'testDbConnection';
+  next();
+})
 export default class TestController {
 
   testService = new TestService();
@@ -105,6 +109,7 @@ export default class TestController {
 
   @Delete('/test')
   deleteTest(request: Request, response: Response) {
+    Logger.info(request.dbConnectionString);
     this.testService.returnSuccess(request, response, 'Delete');
   }
 
@@ -185,7 +190,3 @@ describe('Integration - TestController', () => {
   });
 });
 ```
-
-# Upcoming features
-* Class wide middlewares
-  * Currently there are only route-specific middlewares and application-wide middlewares
