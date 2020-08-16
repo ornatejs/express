@@ -26,10 +26,15 @@ export default function RouterHelper(routers: any[], config?: HelperConfig) {
 
     routes.forEach(route => {
       const methodName: string = route.methodName as string;
-      // @ts-ignore
-      router[route.requestMethod](prefix + route.path, (req: Request, res: Response) => {
-        instance[methodName](req, res);
-      });
+      if (Reflect.hasMetadata(`${methodName}Middleware`, controller)) {
+        // tslint:disable-next-line: ban-types
+        const methods = instance[methodName]().map((method: Function) => {
+          return method.bind(instance);
+        })
+        router[route.requestMethod](prefix + route.path, ...methods);
+      } else {
+        router[route.requestMethod](prefix + route.path, instance[methodName].bind(instance));
+      }
       Logger.info(`Endpoint registered with ${instance.constructor.name}: ${''.padEnd(longestMethodNameLength - route.requestMethod.length)}(${route.requestMethod.toUpperCase()})  ${prefix + route.path}`)
     });
   });
