@@ -2,6 +2,8 @@
 
 ### An add on for Express to implement TypeScript decorators to your Express applications
 
+## [Boilerplate/Example Project](https://github.com/StephenABoyd/Express-Boilerplate-Decorators)
+
 ## Why?
 Clean and elegant solutions to creating a "class-based" architecture for Express apps and services with very minimal setup.
 
