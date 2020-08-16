@@ -4,6 +4,7 @@ import { Controller } from './Decorators/Controller';
 import { Delete, Get, Options, Patch, Post, Put } from './Decorators/Methods';
 import { Config } from './Decorators/Config';
 import { Middleware } from './Decorators/Middleware';
+import { ClassMiddleware } from './Decorators/ClassMiddleware';
 import { RouteDefinition } from './Model/RouteDefinition';
 import RouterHelper from './RouterHelper';
 import Application from './Application';
@@ -19,6 +20,7 @@ export {
   RouteDefinition,
   Application,
   Config,
-  Middleware
+  Middleware,
+  ClassMiddleware
 };
 export default RouterHelper;

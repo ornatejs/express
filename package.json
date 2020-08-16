@@ -1,6 +1,6 @@
 {
   "name": "@ornate/express",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "TypeScript Decorators for Express routing",
   "repository": "github:ornatejs/express",
   "main": "lib/index.js",
