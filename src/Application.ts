@@ -8,17 +8,17 @@ export default class Application {
   config: Partial<Config> = {};
 
   private setup() {
-    if (this.config.routes) {
-      this.app.use(RouterHelper(this.config.routes, { 
-        logLevel: this.config.logLevel || 'info' 
-      }));
-    }
-    
     if (this.config.middlewares) {
       this.config.middlewares.forEach(middleware => {
         this.app.use(middleware);
       });
     }
+
+    if (this.config.routes) {
+      this.app.use(RouterHelper(this.config.routes, { 
+        logLevel: this.config.logLevel || 'info' 
+      }));
+    }    
   }
 
   start() {
