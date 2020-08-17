@@ -13,8 +13,7 @@
     "test:ci": "jest --coverage",
     "lint": "tslint -p tsconfig.build.json",
     "build": "tsc -p tsconfig.build.json",
-    "prepare": "npm run build",
-    "prepublishOnly": "npm test && npm run lint",
+    "prepublishOnly": "npm lint && npm test && npm run build",
     "preversion": "npm run lint",
     "version": "git add -A src",
     "postversion": "git push && git push --tags"
