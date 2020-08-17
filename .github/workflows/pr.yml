@@ -23,7 +23,7 @@ jobs:
         node-version: 12.x
 
     - name: Install
-      run: npm ci
+      run: npm i
 
     - name: Lint
       run: npm run lint
