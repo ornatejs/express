@@ -2,7 +2,7 @@ import express from 'express';
 
 import Config from './Model/Config';
 import RouterHelper from './RouterHelper';
-import Logger from './utils/Logger';
+import Logger from './Utils/Logger';
 
 export default class Application {
   app = express();
