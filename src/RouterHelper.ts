@@ -1,7 +1,7 @@
 import { Router } from 'express';
 
-import Logger from './Utils/Logger';
 import { HttpMethod, RouteDefinition } from './Model/RouteDefinition';
+import Logger from './Utils/Logger';
 
 export interface HelperConfig {
   logLevel: string;
@@ -26,7 +26,7 @@ export default function RouterHelper(routers: any[], config?: HelperConfig) {
 
     routes.forEach(route => {
       const methodName: string = route.methodName as string;
-      
+
       let allMethods = [];
       if (Reflect.hasMetadata(`ClassMiddleware`, controller)) {
         allMethods.push(...instance.middlewares);

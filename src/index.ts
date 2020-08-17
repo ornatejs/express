@@ -1,15 +1,15 @@
 import 'reflect-metadata';
 
+import Application from './Application';
+import { ClassMiddleware } from './Decorators/ClassMiddleware';
+import { Config } from './Decorators/Config';
 import { Controller } from './Decorators/Controller';
 import { Delete, Get, Options, Patch, Post, Put } from './Decorators/Methods';
-import { Config } from './Decorators/Config';
 import { Middleware } from './Decorators/Middleware';
-import { ClassMiddleware } from './Decorators/ClassMiddleware';
 import { RouteDefinition } from './Model/RouteDefinition';
 import RouterHelper from './RouterHelper';
-import Application from './Application';
 
-export { 
+export {
   Get,
   Post,
   Delete,

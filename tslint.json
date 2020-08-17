@@ -1,3 +1,27 @@
 {
-  "extends": ["tslint:recommended", "tslint-config-prettier"]
+  "extends": ["tslint:recommended", "tslint-config-prettier"],
+  "rules": {
+    "ban-types": false,
+    "callable-types": false,
+    "only-arrow-functions": false,
+    "eofline": true,
+    "arrow-return-shorthand": true,
+    "class-name": true,
+    "cyclomatic-complexity": [true, 15],
+    "import-spacing": true,
+    "max-line-length": [
+      true,
+      {
+        "limit": 120
+      }
+    ],
+    "newline-before-return": true,
+    "no-console": true,
+    "no-debugger": true,
+    "no-empty": false,
+    "no-trailing-whitespace": true,
+    "object-literal-shorthand": true,
+    "ordered-imports": true,
+    "quotemark": [true, "single"]
+  }
 }

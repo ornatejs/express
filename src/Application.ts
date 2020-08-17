@@ -1,7 +1,8 @@
 import express from 'express';
-import Logger from './utils/Logger';
-import RouterHelper from './RouterHelper';
+
 import Config from './Model/Config';
+import RouterHelper from './RouterHelper';
+import Logger from './utils/Logger';
 
 export default class Application {
   app = express();
@@ -15,10 +16,10 @@ export default class Application {
     }
 
     if (this.config.routes) {
-      this.app.use(RouterHelper(this.config.routes, { 
-        logLevel: this.config.logLevel || 'info' 
+      this.app.use(RouterHelper(this.config.routes, {
+        logLevel: this.config.logLevel || 'info'
       }));
-    }    
+    }
   }
 
   start() {
@@ -31,6 +32,7 @@ export default class Application {
 
   getAppForTesting() {
     this.setup();
+
     return this.app;
   }
 }
