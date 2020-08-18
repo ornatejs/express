@@ -22,12 +22,16 @@ export default class Application {
     }
   }
 
-  start() {
+  start(cb?: () => void) {
     this.setup();
     const port = this.config.port || 8080;
-    this.app.listen(port, () => {
-      Logger.info(`server started at http://localhost:${ port }`);
-    });
+    let callback = () => {
+      Logger.info(`Server started at port ${ port }`);
+    };
+    if (cb) {
+      callback = cb;
+    }
+    this.app.listen(port, callback);
   }
 
   getAppForTesting() {
