@@ -20,6 +20,14 @@ describe('Controller', () => {
     controllerDecorator(MockClass.constructor);
     expect(Reflect.getMetadata('routes', MockClass.constructor)).toEqual(['testRoute']);
   });
+
+  it('should default route prefix to empty', () => {
+    Reflect.defineMetadata('routes', ['testRoute'], MockClass.constructor);
+    const controllerDecorator = Controller();
+    controllerDecorator(MockClass.constructor);
+    expect(Reflect.getMetadata('routes', MockClass.constructor)).toEqual(['testRoute']);
+    expect(Reflect.getMetadata('prefix', MockClass.constructor)).toEqual('');
+  });
 });
 
 class MockClass {
