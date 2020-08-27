@@ -31,7 +31,7 @@ export default class Application {
     if (cb) {
       callback = cb;
     }
-    this.app.listen(port, callback);
+    return this.app.listen(port, callback);
   }
 
   getAppForTesting() {
