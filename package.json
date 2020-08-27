@@ -1,6 +1,6 @@
 {
   "name": "@ornate/express",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "TypeScript Decorators for Express routing",
   "repository": "github:ornatejs/express",
   "main": "lib/index.js",
@@ -13,7 +13,7 @@
     "test:ci": "jest --coverage",
     "lint": "tslint -p tsconfig.build.json",
     "build": "tsc -p tsconfig.build.json",
-    "prepublishOnly": "npm lint && npm test && npm run build",
+    "prepublishOnly": "npm run lint && npm run test && npm run build",
     "preversion": "npm run lint",
     "version": "git add -A src",
     "postversion": "git push && git push --tags"
